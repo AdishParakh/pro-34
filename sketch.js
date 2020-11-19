@@ -12,7 +12,7 @@ function setup() {
   createCanvas(500, 500);
 
   database=firebase.database()
-  var foodStock=database.ref("food");
+  var foodStock=database.ref("foodS");
   foodStock.on("value", readStock);
 
   var dog = createSprite(250, 350)
@@ -40,7 +40,7 @@ if (foodStock!==undefined) {
   stroke("black");
   fill ("brown")
 
-  text ("food Stock:" + foodStock, 340, 70)
+  text ("food Stock:" + foodS, 340, 70)
 
   stroke("black");
   fill ("brown")
@@ -55,7 +55,7 @@ function writeStock (num) {
     num=0;
   }
   else{
-    num=mum-1
+    num=num-1
   }
   database.ref("/").update({
     foodS:num
