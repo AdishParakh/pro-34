@@ -15,7 +15,7 @@ function setup() {
   var foodStock=database.ref("foodS");
   foodStock.on("value", readStock);
 
-  var dog = createSprite(250, 350)
+  dog = createSprite(250, 350)
   dog.scale=0.25
   dog.addImage (dogImg) 
 
@@ -40,7 +40,7 @@ if (foodStock!==undefined) {
   stroke("black");
   fill ("brown")
 
-  text ("food Stock:" + foodS, 340, 70)
+  text ("food Stock:" + foodStock, 340, 70)
 
   stroke("black");
   fill ("brown")
@@ -48,7 +48,7 @@ if (foodStock!==undefined) {
 }
 
 function readStock (data) {
-  foodS=data.val();
+  foodStock=data.val();
 }
 function writeStock (num) {
   if (num<=0){
